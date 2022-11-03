@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
-    public class GetNoteListQuearyValidator : AbstractValidator<GetNoteListQueary>
+    public class GetNoteListQueryValidator : AbstractValidator<GetNoteListQuery>
     {
-        public GetNoteListQuearyValidator()
+        public GetNoteListQueryValidator()
         {
             RuleFor(getNoteListQueary => getNoteListQueary.UserId).NotEqual(Guid.Empty);
         }

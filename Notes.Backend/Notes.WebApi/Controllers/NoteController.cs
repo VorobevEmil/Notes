@@ -26,7 +26,7 @@ namespace Notes.WebApi.Controllers
         [Authorize]
         public async Task<ActionResult<NoteListVm>> GetAll()
         {
-            var query = new GetNoteListQueary
+            var query = new GetNoteListQuery
             {
                 UserId = UserId,
             };

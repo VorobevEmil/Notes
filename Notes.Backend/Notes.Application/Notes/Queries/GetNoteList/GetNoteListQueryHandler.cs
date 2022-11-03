@@ -6,18 +6,18 @@ using Notes.Application.Interfaces;
 
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
-    public class GetNoteListQuearyHandler : IRequestHandler<GetNoteListQueary, NoteListVm>
+    public class GetNoteListQueryHandler : IRequestHandler<GetNoteListQuery, NoteListVm>
     {
         private readonly INotesDbContext _dbContext;
         private readonly IMapper _mapper;
 
-        public GetNoteListQuearyHandler(INotesDbContext dbContext, IMapper mapper)
+        public GetNoteListQueryHandler(INotesDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
 
-        public async Task<NoteListVm> Handle(GetNoteListQueary request, CancellationToken cancellationToken)
+        public async Task<NoteListVm> Handle(GetNoteListQuery request, CancellationToken cancellationToken)
         {
             var notesQueary = await _dbContext.Notes
                 .Where(note => note.UserId == request.UserId)
